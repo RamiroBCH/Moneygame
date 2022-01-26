@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Moneygame</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Bienvenida">Este es un juego de preguntas multiple choice, en el que
+        deberas pasar por 10 preguntas al azar sobre el libro Padre rico, Padre pobre.
+        Al finalizar podras ver tu puntaje en base a las respuestas correctas.</string>
+    <string name="start">Start</string>
+    <string name="jugar_de_nuevo">Jugar de nuevo.</string>
+    <string name="money_game">Money Game</string>
+</resources>
