@@ -22,15 +22,12 @@ class FinalFragment : Fragment() {
         val fragmentBinding = FragmentFinalBinding.inflate(inflater,container,false)
         binding = fragmentBinding
         return fragmentBinding.root
-
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding?.apply {
-            //nextButton.setOnClickListener { goToNextScreen() }
             viewModel = viewModelAll
-            lifecycleOwner = viewLifecycleOwner
             fragmentFinal = this@FinalFragment
         }
     }

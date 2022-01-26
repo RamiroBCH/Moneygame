@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.moneygame.R
+import com.moneygame.R.id.action_gameFragment_to_finalFragment
 import com.moneygame.databinding.FragmentGameBinding
 import com.moneygame.vm.ViewModelAll
 
@@ -26,9 +27,7 @@ class GameFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding?.apply {
-            //nextButton.setOnClickListener { goToNextScreen() }
             viewModel = viewModelAll
             lifecycleOwner = viewLifecycleOwner
             fragmentGame = this@GameFragment
@@ -36,10 +35,9 @@ class GameFragment : Fragment() {
     }
 
     fun goToScore() {
-        if (viewModelAll.goToScore.equals(true)) {
-            findNavController().navigate(R.id.action_gameFragment_to_finalFragment)
-        }
+        findNavController().navigate(action_gameFragment_to_finalFragment)
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null

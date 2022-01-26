@@ -1,5 +1,6 @@
 package com.moneygame.vm
 
+import android.transition.TransitionValues
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -35,8 +36,7 @@ class ViewModelAll : ViewModel() {
     private val _setTrue = MutableLiveData<Int>()
     val setTrue: LiveData<Int> = _setTrue
 
-    private val _goToScore = MutableLiveData<Boolean>()
-    val goToScore: MutableLiveData<Boolean> = _goToScore
+
 
     //Funciones
     init {
@@ -51,7 +51,10 @@ class ViewModelAll : ViewModel() {
 
     fun newQuestion2() {
         _setTrue.value = 2
-        increaseScore()
+        if (_currentQCount.value!! <= numLimitQuestion) {
+            increaseScore()
+        }
+
         nextQuestion()
         getAnswers()
     }
@@ -68,14 +71,11 @@ class ViewModelAll : ViewModel() {
             getNextQuestion()
             true
         } else {
-            goToScore()
+            _currentQCount.value = (_currentQCount.value)?.inc()
+            false
         }
     }
 
-    private fun goToScore(): Boolean {
-        _goToScore.value = true
-        return true
-    }
 
     private fun getNextQuestion() {
         currentQuestion = allQuestionsList.random()
@@ -90,12 +90,12 @@ class ViewModelAll : ViewModel() {
 
     private fun getAnswers() {
         when (currentQuestion) {
-            "Nombre del autor de Padre Rico, Padre Pobre:" -> setAnswerList(respList1)
+            "Nombre del autor de Padre Rico, Padre Pobre" -> setAnswerList(respList1)
             "¿Cuál fue el primer negocio de Robert?" -> setAnswerList(respList2)
-            "Según Robert los activos y pasivos son:" -> setAnswerList(respList3)
-            "El juego que inventó Robert, se llama:" -> setAnswerList(respList4)
-            "Conocer la ley porque es más caro no conocerla. Eso lo decía:" -> setAnswerList(respList5)
-            "La inteligencia resuelve problemas y produce dinero. El dinero sin inteligencia financiera es:" -> setAnswerList(respList6)
+            "Según Robert los activos y pasivos son" -> setAnswerList(respList3)
+            "El juego que inventó Robert, se llama" -> setAnswerList(respList4)
+            "Conocer la ley porque es más caro no conocerla. Eso lo decía" -> setAnswerList(respList5)
+            "La inteligencia resuelve problemas y produce dinero. El dinero sin inteligencia financiera es" -> setAnswerList(respList6)
             "¿Que es un activo para los ricos?" -> setAnswerList(respList7)
             "¿Que es un pasivo para los ricos?" -> setAnswerList(respList8)
             "¿Cuál es la causa de la inestabilidad económica de las familias o parejas jóvenes?" -> setAnswerList(respList9)

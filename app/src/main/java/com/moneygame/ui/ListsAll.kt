@@ -6,7 +6,7 @@ val allQuestionsList: List<String> = listOf(
     "Según Robert los activos y pasivos son",
     "El juego que inventó Robert, se llama",
     "Conocer la ley porque es más caro no conocerla. Eso lo decía",
-    "La inteligencia resuelve problemas y produce dinero. El dinero sin inteligencia financiera es:",
+    "La inteligencia resuelve problemas y produce dinero. El dinero sin inteligencia financiera es",
     "¿Que es un activo para los ricos?",
     "¿Que es un pasivo para los ricos?",
     "¿Cuál es la causa de la inestabilidad económica de las familias o parejas jóvenes?",

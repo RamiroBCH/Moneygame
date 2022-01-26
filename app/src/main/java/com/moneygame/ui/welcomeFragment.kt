@@ -29,7 +29,6 @@ class WelcomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding?.welcomeFragment = this
         binding?.apply {
-            //nextButton.setOnClickListener { goToNextScreen() }
             viewModel = viewModelAll
             lifecycleOwner = viewLifecycleOwner
         }
